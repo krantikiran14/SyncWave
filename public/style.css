@@ -1,56 +1,69 @@
 :root {
-    --main-bg-color: #edf5fe;
-    --light-blue: #03a9f4;
-    --dark-blue: #028bca;
-  }
+  --main-bg-color: #2c2c2c; /* Dark gray background */
+  --download-bg-start: #1c1c1c; /* Darker gradient start */
+  --download-bg-end: #2c2c2c; /* Darker gradient end */
+  --light-purple: #6A63D4; /* Adjusted light purple */
+  --dark-purple: #514ECF; /* Adjusted dark purple */
+}
 
-  body {
-    font-family: system-ui;
-    background: var(--main-bg-color);
-    height: 98vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #333;
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--main-bg-color);
+  height: 98vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  margin: 0;
+}
 
-  .logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 150px;
-  }
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 150px;
+}
+
 section.download {
-    background: #fff;
-    width: 430px;
-    max-width: 90%;
-    border-radius: 25px;
-    box-shadow: 0px 20px 20px 0px #00000017;
-    padding: 2rem;
-    text-align: center;
+  background: linear-gradient(to bottom, var(--download-bg-start), var(--download-bg-end));
+  border: 1px solid #333;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.download__icon {
-    height: 8rem;
-}
-.download__meta h4 {
-    margin-bottom: 0;
-    line-height: 1.3;
-}
-.send-btn-container a {
-    display: inline-block;
-    font-size: 18px;
-    padding: 8px 40px;
-    margin-top: 15px;
-    background: var(--light-blue);
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-  }
 
-  .send-btn-container a:hover {
-      background: var(--dark-blue);
-  }
+section.download:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.download__icon {
+  height: 3rem;
+}
+
+.download__meta h4 {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+
+.send-btn-container a {
+  display: inline-block;
+  font-size: 18px;
+  padding: 8px 40px;
+  margin-top: 15px;
+  background: var(--light-purple);
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.send-btn-container a:hover {
+  background: var(--dark-purple);
+}
