@@ -3,10 +3,18 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const cors = require('cors')
 
 const PORT = process.env.PORT || 3000 ; 
 
 const connectDB = require('./config/db');
+const corsOptions ={
+    origin: process.env.ALLOWED_CLIENTS.split(',')
+
+}
+
+app.use(cors(corsOptions));
+
 app.use(express.static('public'));
 app.use(express.json());
 connectDB();  
