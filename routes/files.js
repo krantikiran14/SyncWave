@@ -73,7 +73,7 @@ router.post('/send', async (req, res) => {
         await sendMail({
             from: emailFrom,
             to: emailTo,
-            subject: 'inShare file sharing',
+            subject: 'SyncWave File Sharing',
             text: `${emailFrom} shared a file with you.`,
             html: require('../services/emailTemplate')({
                 emailFrom,
