@@ -8,11 +8,6 @@ const cors = require('cors')
 const PORT = process.env.PORT || 3000 ; 
 
 const connectDB = require('./config/db');
-app.options('https://harmonious-clafoutis-bb2680.netlify.app/', (req, res) => {
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.send();
-});
 const corsOptions ={
     origin: process.env.ALLOWED_CLIENTS.split(',')
 
