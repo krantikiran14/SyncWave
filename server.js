@@ -8,6 +8,11 @@ const cors = require('cors')
 const PORT = process.env.PORT || 3000 ; 
 
 const connectDB = require('./config/db');
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://harmonious-clafoutis-bb2680.netlify.app/'); // You can replace '*' with your specific domain
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 const corsOptions ={
     origin: process.env.ALLOWED_CLIENTS.split(',')
 
